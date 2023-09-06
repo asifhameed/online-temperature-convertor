@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Online Temperature Convertor</title>
+<script>
+	function converter()
+	{
+		var fahrenheit = document.getElementById("fahrenheit").value;
+		if(fahrenheit == "")
+		{
+			alert("Fahrenheit field is empty.");	
+		}
+		else
+		{
+			var celsiusVal = (fahrenheit - 32) * (5/9);
+			var kelvinVal = ((fahrenheit - 32) * (5 / 9)) + 273.15;
+			
+			document.getElementById("fahrenheit").value = fahrenheit;
+			document.getElementById("celsius").value = celsiusVal;
+			document.getElementById("kelvin").value = kelvinVal;	
+		}
+		return false;
+	}
+</script>
+</head>
+
+<body>
+	<center>
+    	<form action="" method="post" name="form1" id="form1">
+			<table border="0" cellpadding="5" cellspacing="5" width="800">
+				<tr>
+					<td colspan="2" align="center" height="75" bgcolor="#0066ff"><h1>Online Temperature Convertor</h1></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="left" height="75" bgcolor="#0099ff">You are welcome to Online Temperature Convertor. Here is a simple Fahrenheit temperature convertor. You can enter Fahrenheit value and get converted values into Celsius and Kelvin scales as per your requirement.</td>
+				</tr>
+				<tr><td colspan="2" height="25">&nbsp;</td></tr>
+				<tr>
+					<td width="200" align="left">Fahrenheit</td>
+					<td width="600" align="left"><input type="text" name="fahrenheit" id="fahrenheit" /></td>
+				</tr>
+				<tr>
+					<td align="left">Celsius</td>
+					<td align="left"><input type="text" name="celsius" id="celsius" /></td>
+				</tr>
+				<tr>
+					<td align="left">Kelvin</td>
+					<td align="left"><input type="text" name="kelvin" id="kelvin" /></td>
+				</tr>
+				<tr>
+					<td align="left">&nbsp;</td>
+					<td align="left"><input type="submit" name="convert_btn" id="convert_btn" value="Convert" onclick="return converter();" />&nbsp;&nbsp;<input type="reset" name="reset" id="reset" value="Reset Form" /></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="left">To clear your form for new conversions you can press the "Reset Form" button and all values will b erased from fields.</td>
+				</tr>
+			</table>
+        </form>
+    </center>
+</body>
+</html>
